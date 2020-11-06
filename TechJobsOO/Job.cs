@@ -19,26 +19,18 @@ namespace TechJobsOO
             Id = nextId;
             nextId++;
         }
-        public Job (string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency)
-        :this (){
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency)
+        : this()
+        {
             Name = name;
-            EmployerName=employerName;
+            EmployerName = employerName;
             EmployerLocation = employerLocation;
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
         }
 
         // TODO: Generate Equals() and GetHashCode() methods.
-        public override bool Equals(object obj)
-        {
-            return obj is Job job &&
-                   Id == job.Id;
-        }
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
 
         
 
@@ -51,7 +43,7 @@ namespace TechJobsOO
             toString += "\nEmployer: " + GetCorrectLabel(EmployerName.Value);
             toString += "\nLocation: " + GetCorrectLabel(EmployerLocation.Value);
             toString += "\nPosition Type: " + GetCorrectLabel(JobType.Value);
-            toString += "\nCore Competency: " + GetCorrectLabel(JobCoreCompetency.Value+"\n");
+            toString += "\nCore Competency: " + GetCorrectLabel(JobCoreCompetency.Value + "\n");
 
             return toString;
         }
